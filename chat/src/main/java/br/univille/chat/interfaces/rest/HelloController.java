@@ -1,4 +1,4 @@
-package com.example.demo2.interfaces.rest;
+package main.java.br.univille.chat.interfaces.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,17 @@ public class HelloController {
 
     @GetMapping("/name")
     public String name() {
-        return "Demo2";
+        return "Chat";
+    }
+
+    @GetMapping("/user")
+    public String waiter() {
+        return "Chat - User";
+    }
+
+    @GetMapping("/admin")
+    public String customer() {
+        return "Chat - Admin";
     }
 
 }

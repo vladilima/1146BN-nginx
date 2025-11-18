@@ -1,4 +1,4 @@
-package main.java.br.univille.chat.interfaces.rest;
+package br.univille.chat.interfaces.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

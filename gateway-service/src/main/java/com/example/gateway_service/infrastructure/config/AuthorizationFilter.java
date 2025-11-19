@@ -32,6 +32,15 @@ public class AuthorizationFilter implements WebFilter {
         "/users/profile", RoleType.USER
     );
 
+    private boolean isSwaggerPath(String path) {
+        return path.startsWith("/v3/api-docs")
+            || path.startsWith("/swagger-ui")
+            || path.startsWith("/swagger-ui.html")
+            || path.startsWith("/webjars")
+            || path.startsWith("/docs")
+            ;
+    }
+
     private boolean isAuthorized(String path, RoleType role) {
         for (Map.Entry<String, RoleType> entry: routeRole.entrySet()) {
             if (path.startsWith(entry.getKey())) {
@@ -55,6 +64,10 @@ public class AuthorizationFilter implements WebFilter {
         // Verifica se a rota é segura (aquelas definidas em routeRole)
         boolean isSecured = routeRole.entrySet().stream().anyMatch(entry -> path.startsWith(entry.getKey()));
         if (!isSecured) {
+            return chain.filter(exchange);
+        }
+        
+        if (isSwaggerPath(path)) {
             return chain.filter(exchange);
         }
 

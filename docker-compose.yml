@@ -6,7 +6,7 @@ services:
       context: ./service-discovery
     container_name: service-discovery
     ports:
-      - "8083:8080"
+      - "8091:8080"
     volumes:
       - ./service-discovery:/app
       - ~/.m2:/root/.m2
@@ -17,7 +17,7 @@ services:
       context: ./auth-service
     container_name: auth-service
     ports:
-      - "8085:8080"
+      - "8092:8080"
     volumes:
       - ./auth-service:/app
       - ~/.m2:/root/.m2
@@ -53,7 +53,7 @@ services:
       context: ./gateway-service
     container_name: gateway-service
     ports:
-      - "8086:8080"
+      - "8093:8080"
     volumes:
       - ./gateway-service:/app
       - ~/.m2:/root/.m2

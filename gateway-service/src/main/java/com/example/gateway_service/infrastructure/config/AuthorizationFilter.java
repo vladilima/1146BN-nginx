@@ -35,9 +35,9 @@ public class AuthorizationFilter implements WebFilter {
     private boolean isSwaggerPath(String path) {
         return path.startsWith("/v3/api-docs")
             || path.startsWith("/swagger-ui")
-            || path.startsWith("/swagger-ui.html")
             || path.startsWith("/webjars")
             || path.startsWith("/docs")
+            || path.startsWith("/swagger-ui.html")
             ;
     }
 

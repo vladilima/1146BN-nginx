@@ -1,0 +1,13 @@
+### API USUARIO - GET
+GET http://localhost:8080/users
+
+### API USUARIO - POST
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Vladimir Teste",
+  "email": "vladimir@teste.com",
+  "password": "SenhaForte123",
+  "role": "USER"
+}

@@ -24,8 +24,8 @@ public class AuthorizationFilter implements WebFilter {
     private String jwtSecret;
 
     public static final Map<String, RoleType> routeRole = Map.of(
-        "/demo1/waiter", RoleType.WAITER,
-        "/demo1/customer", RoleType.CUSTOMER
+        "/contas-service/user", RoleType.USER,
+        "/contas-service/admin", RoleType.ADMIN
     );
 
     private boolean isAuthorized(String path, RoleType role) {

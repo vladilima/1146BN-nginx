@@ -5,12 +5,9 @@ import lombok.Getter;
 
 @Getter
 public enum RoleType {
-    CUSTOMER(1),
-    WAITER(2),
-    CHEF(3),
-    ADMIN(4);
+    USER(1),
+    ADMIN(2);
 
-    @Getter
     private final int level;
 
     RoleType(int level) {

@@ -21,7 +21,7 @@ public class RegisterUserHandler {
         Email email = Email.of(emailRaw);
 
         String hash = passwordHasher.hash(senha);
-        User user = new User(nome, hash, email, RoleType.CUSTOMER);
+        User user = new User(nome, hash, email, RoleType.USER);
 
         User saved = userRepository.save(user);
         return new UserResponse(
